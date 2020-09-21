@@ -11,6 +11,24 @@
       "name": "OM restaurant",
       "adress": "delhi sector 50",
       "email": "om@test.com"
-    }
+    },
+    {
+      "id": 3,
+      "name": "Mcdonalds restaurant",
+      "adress": "Mcdonalds sector 50",
+      "email": "Mcdonalds@test.com"
+    },
+    {
+      "id": 4,
+      "name": "Burgerking restaurant",
+      "adress": "Burgerking sector 50",
+      "email": "Burgerking@test.com"
+    },
+    {
+      "id": 5,
+      "name": "halal restaurant",
+      "adress": "halal sector 50",
+      "email": "halal@test.com"
+    },
   ]
 }
