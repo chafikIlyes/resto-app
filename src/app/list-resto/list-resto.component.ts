@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {RestoService} from '../resto.service'
 @Component({
   selector: 'app-list-resto',
   templateUrl: './list-resto.component.html',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListRestoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private resto :RestoService) { }
 
   ngOnInit(): void {
+
+    this.resto.getList();
   }
 
 }
