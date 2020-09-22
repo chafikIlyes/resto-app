@@ -1,22 +1,46 @@
 {
   "restaurants": [
     {
-      "id": 1,
-      "name": "KFC restaurant",
-      "address": "noida sector 50",
-      "email": "KFC@test.com"
-    },
-    {
       "id": 2,
       "name": "OM restaurant",
       "address": "delhi sector 50",
       "email": "om@test.com"
     },
     {
-      "id": 4,
-      "name": "Burgerking restaurant",
-      "address": "Burgerking sector 50",
-      "email": "Burgerking@test.com"
+      "name": "Mc Donalds",
+      "email": "Mc@Mc.com",
+      "address": "100 bp city 2",
+      "id": 3
+    },
+    {
+      "name": "hello",
+      "email": "world@hello.com",
+      "address": "360 log Alger Algeria ",
+      "id": 4
+    },
+    {
+      "name": "meliani",
+      "email": "meliani@caci.dz",
+      "address": "the Big restaurant ",
+      "id": 5
+    },
+    {
+      "name": "The white restaurant ",
+      "email": "white @caci.dz",
+      "address": "the white restaurant ",
+      "id": 6
+    },
+    {
+      "name": "The freez ",
+      "email": "freez @caci.dz",
+      "address": "the freez restaurant ",
+      "id": 7
+    },
+    {
+      "name": "Cool restaurant ",
+      "email": "Cool @caci.dz",
+      "address": "the Cool restaurant ",
+      "id": 8
     }
   ]
 }
