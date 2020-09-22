@@ -11,6 +11,16 @@ export class RestoService {
   constructor(private http:HttpClient) { }
 
   getList(){
-    console.warn("Some data ")
+
+    return this.http.get(this.url);
+  }
+
+  saveResto(data){
+
+   return this.http.post(this.url,data)
+  }
+
+  deleteResto(id){
+    return this.http.delete(`${this.url}/${id}`);
   }
 }
