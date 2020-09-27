@@ -13,9 +13,9 @@
       "id": 3
     },
     {
-      "name": "hello",
-      "email": "world@hello.com",
-      "address": "360 log Alger Algeria ",
+      "name": "hello xxxx",
+      "email": "world@hello.com xxxxx",
+      "address": "360 log Alger Algeria  xxxxx",
       "id": 4
     },
     {
@@ -41,6 +41,26 @@
       "email": "Cool @caci.dz",
       "address": "the Cool restaurant ",
       "id": 8
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "some comment",
+      "email": "some comment",
+      "address": "some address "
+    },
+    {
+      "name": "gouasmia",
+      "email": "gouasmia.chafik@gmail.com",
+      "address": "my adresse 632 Alger algeria ",
+      "id": 2
+    },
+    {
+      "name": "ilyes ",
+      "email": "ilyes.chafik@gmail.com",
+      "address": "somewhere 632 in some country ",
+      "id": 3
     }
   ]
 }
