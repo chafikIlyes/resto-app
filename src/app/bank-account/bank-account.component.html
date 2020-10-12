@@ -1,0 +1,68 @@
+<blockquote class="blockquote ml-5">
+    <h2>My bank Accounts</h2>
+    <footer class="blackqauote-footer">
+        Using inline table editing with Angular 10 From <i>Angular 8</i> tutorial :) 
+    </footer>
+</blockquote>
+<div class="grid-table">
+    <div class="thead">
+        <div class="tr">
+            <div class="td">Account No</div>
+            <div class="td">Account Holder</div>
+            <div class="td">Bank</div>
+            <div class="td">IFSC</div>
+            <div class="td">
+
+                <button class="btn btn-outline-success" (click)="addBankAccountForms()">
+                    <i class="fa fa-plus"> New Account</i>
+                </button>
+
+            </div>
+            <div class="td">
+                <span *ngIf="notification" class="elementToFadeInAndOut">
+                    <i class="fa fa-check-circle {{notification.class}}"></i>
+                    {{notification.message}}
+                </span>
+              
+            </div>
+        </div>
+    </div>
+    <div class="tbody">
+        <form class="tr" [formGroup]="fg" *ngFor="let fg of bankAccountForms.controls; let i =index"
+         (submit)="recordSubmit(fg)"
+         
+         >
+            <div class="td">
+                <input class="form-control" formControlName="accountNumber">
+
+            </div>
+            <div class="td">
+                <input class="form-control" formControlName="accountHolder">
+
+            </div>
+            <div class="td">
+                <select class="form-control" formControlName="bankId">
+                    <option value="0"> Select</option>
+                    <option *ngFor="let item of bankList" value="{{item.bankId}}">{{item.bankName}}</option>
+                </select>
+
+            </div>
+            <div class="td">
+                <input class="form-control" formControlName="IFSC">
+            </div>
+
+            <div class="td">
+                <button [disabled]="fg.invalid" type="submit" class="btn" 
+                [ngClass]="(fg.get('id').value==0)? 'btn-success': 'btn-outline-dark'" >
+                    <i class="fa fa-save" style="color:red;margin-left: 17px;"></i>
+                    {{fg.get('id').value==0? 'Submit': 'Update'}}
+                </button>
+                <button class="btn btn-light ml-1">
+                    <i (click)="onDelete(fg.get('id').value,i)" class="fa fa-trash ml-1" 
+                    style="font-size:20px;color:red; float: right;"></i>
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>

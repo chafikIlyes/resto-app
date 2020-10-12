@@ -1,10 +1,10 @@
 {
   "restaurants": [
     {
-      "id": 2,
       "name": "OM restaurant",
+      "email": "om@test.com",
       "address": "delhi sector 50",
-      "email": "om@test.com"
+      "id": 2
     },
     {
       "name": "Mc Donalds",
@@ -19,28 +19,16 @@
       "id": 4
     },
     {
-      "name": "meliani",
-      "email": "meliani@caci.dz",
-      "address": "the Big restaurant ",
+      "name": "restau degeu",
+      "email": "degeu@hot.com",
+      "address": "20 rue de la poubelle ",
       "id": 5
     },
     {
-      "name": "The white restaurant ",
-      "email": "white @caci.dz",
-      "address": "the white restaurant ",
+      "name": "gouasmia ",
+      "email": "gouasmia.chafik@gmail.com",
+      "address": "aderesse de monsieur gouasmia",
       "id": 6
-    },
-    {
-      "name": "The freez ",
-      "email": "freez @caci.dz",
-      "address": "the freez restaurant ",
-      "id": 7
-    },
-    {
-      "name": "Cool restaurant ",
-      "email": "Cool @caci.dz",
-      "address": "the Cool restaurant ",
-      "id": 8
     }
   ],
   "users": [
@@ -61,6 +49,59 @@
       "email": "ilyes.chafik@gmail.com",
       "address": "somewhere 632 in some country ",
       "id": 3
+    },
+    {
+      "name": "",
+      "email": "gouasmia.chafik@gmail.com",
+      "password": "123456789",
+      "id": 4
+    },
+    {
+      "name": "",
+      "email": "gouasmia.chafik@gmail.com",
+      "password": "123456789",
+      "id": 5
+    },
+    {
+      "name": "qsdqsdqsd",
+      "email": "gouasmia.chafik@gmail.com",
+      "password": "123456789",
+      "id": 6
+    }
+  ],
+  "bank": [
+    {
+      "bankId": 1,
+      "bankName": "some bank 1"
+    },
+    {
+      "bankId": 2,
+      "bankName": "some bank 2"
+    },
+    {
+      "bankId": 3,
+      "bankName": "some bank 3"
+    },
+    {
+      "bankId": 4,
+      "bankName": "some bank 4"
+    },
+    {
+      "bankId": 5,
+      "bankName": "some bank 5"
+    },
+    {
+      "bankId": 6,
+      "bankName": "some bank 6"
+    }
+  ],
+  "BankAccount": [
+    {
+      "id": 1,
+      "accountNumber": "xxxxxxxx",
+      "accountHolder": "xxxxxxxxx",
+      "bankId": "3",
+      "IFSC": "xxxx"
     }
   ]
 }

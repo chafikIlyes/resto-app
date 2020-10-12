@@ -8,6 +8,7 @@ import { RestoService } from '../resto.service'
 export class ListRestoComponent implements OnInit {
 
   constructor(private resto: RestoService) { }
+  
 
   collection:any = [];
 

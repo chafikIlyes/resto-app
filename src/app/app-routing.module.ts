@@ -5,6 +5,7 @@ import { ListRestoComponent } from './list-resto/list-resto.component'
 import { UpdateRestoComponent } from './update-resto/update-resto.component'
 import { LoginComponent } from './login/login.component'
 import { RegisterComponent } from './register/register.component'
+import {BankAccountComponent} from './bank-account/bank-account.component'
 
 const routes: Routes = [
 
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     component: ListRestoComponent,
     path: ''
+  },
+  {
+    component: BankAccountComponent,
+    path: 'bank-account'
   }
 
 ];
