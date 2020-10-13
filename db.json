@@ -67,6 +67,12 @@
       "email": "gouasmia.chafik@gmail.com",
       "password": "123456789",
       "id": 6
+    },
+    {
+      "name": "xxxxxxxxxx",
+      "email": "xxxxxx",
+      "address": "xxxxxx",
+      "id": 7
     }
   ],
   "bank": [
@@ -98,10 +104,24 @@
   "BankAccount": [
     {
       "id": 1,
-      "accountNumber": "xxxxxxxx",
-      "accountHolder": "xxxxxxxxx",
+      "accountNumber": "qsdqsd",
+      "accountHolder": "qsdqsd",
+      "bankId": "4",
+      "IFSC": "qsdqsd"
+    },
+    {
+      "id": 2,
+      "accountNumber": "qsdqsd",
+      "accountHolder": "qsdqsd",
       "bankId": "3",
-      "IFSC": "xxxx"
+      "IFSC": "qsdqsd"
+    },
+    {
+      "id": 3,
+      "accountNumber": "qsdqsd",
+      "accountHolder": "qsdqsd",
+      "bankId": "2",
+      "IFSC": "qsdqsd"
     }
   ]
 }

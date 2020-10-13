@@ -98,15 +98,18 @@ export class BankAccountComponent implements OnInit {
     if(id==0)     
       this.bankAccountForms.removeAt(i);
     
-    else confirm("are you sure you want to delete ?")
+    else if (confirm("are you sure you want to delete ?")){
       this.bankAccountService.deleteBankAccount(id)
-        .subscribe(res=>{
+      .subscribe(res=>{
 
-          this.bankAccountForms.removeAt(i);
-          this.showNotification('delete');
+        this.bankAccountForms.removeAt(i);
+        this.showNotification('delete');
 
 
-        });
+      });
+
+    }
+    
   }
 
   showNotification(category){
