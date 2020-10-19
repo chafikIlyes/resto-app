@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BankService } from '../shared/bank.service';
-import { BankAccountService } from '../shared/bank-account.service';
-
+import {Component, OnInit} from '@angular/core';
+import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {BankService} from '../shared/bank.service';
+import {BankAccountService} from '../shared/bank-account.service';
 
 
 @Component({
@@ -12,30 +11,29 @@ import { BankAccountService } from '../shared/bank-account.service';
 })
 export class BankAccountComponent implements OnInit {
 
-  bankAccountForms: FormArray = this.fb.array([])
+  bankAccountForms: FormArray = this.fb.array([]);
   bankList: any = [];
-  notification=null;
- 
+  notification = null;
+
 
   constructor(private fb: FormBuilder,
-    private bankService: BankService,
-    private bankAccountService: BankAccountService,
-  ) { }
+              private bankService: BankService,
+              private bankAccountService: BankAccountService,
+  ) {
+  }
 
 
-
-  ngOnInit() {
+  ngOnInit(): void {
 
     this.bankService.getBankList().subscribe((result) => {
       console.warn(result);
       this.bankList = result;
-    })
-
+    });
 
 
     this.bankAccountService.getBankAccountList().subscribe(
       res => {
-        if (res == []) {
+        if (res === []) {
           this.addBankAccountForms();
         } else {
           // generate formArray as per the data received from banAccount Table
@@ -53,10 +51,10 @@ export class BankAccountComponent implements OnInit {
           });
 
         }
-      })
+      });
   }
 
-  addBankAccountForms() {
+  addBankAccountForms(): void {
 
     this.bankAccountForms.push(this.fb.group({
       id: [0],
@@ -69,70 +67,70 @@ export class BankAccountComponent implements OnInit {
 
   }
 
-  recordSubmit(fg: FormGroup) {
-    console.warn("Befor saving : ", fg.value);
+  recordSubmit(fg: FormGroup): void {
+    console.warn('Befor saving : ', fg.value);
 
-    if (fg.value.id == 0)
+    if (fg.value.id === 0) {
       this.bankAccountService.postBankAccount(fg.value)
         .subscribe(
           (res: any) => {
-            console.warn("After saving : ", res);
+            console.warn('After saving : ', res);
 
-            fg.patchValue({ id: res.id })
+            fg.patchValue({id: res.id});
             this.showNotification('insert');
 
           });
+    } else {
+      this.bankAccountService.putBankAccount(fg.value)
+        .subscribe(
+          (res: any) => {
+            console.warn('After updating : ', res);
+            this.showNotification('update');
 
-    else this.bankAccountService.putBankAccount(fg.value)
-      .subscribe(
-        (res: any) => {
-          console.warn("After updating : ", res);
-          this.showNotification('update');
+
+          });
+    }
+  }
+
+  onDelete(id, i): void {
+
+    if (id === 0) {
+      this.bankAccountForms.removeAt(i);
+    } else if (confirm('are you sure you want to delete ?')) {
+      this.bankAccountService.deleteBankAccount(id)
+        .subscribe(res => {
+
+          this.bankAccountForms.removeAt(i);
+          this.showNotification('delete');
 
 
         });
-  }
-
-  onDelete(id,i){
-    
-    if(id==0)     
-      this.bankAccountForms.removeAt(i);
-    
-    else if (confirm("are you sure you want to delete ?")){
-      this.bankAccountService.deleteBankAccount(id)
-      .subscribe(res=>{
-
-        this.bankAccountForms.removeAt(i);
-        this.showNotification('delete');
-
-
-      });
 
     }
-    
+
   }
 
-  showNotification(category){
-    switch (category){
-      case  'insert':
-        this.notification={class:'text-success', message: 'saved !'};
+  showNotification(category): void {
+    switch (category) {
+      case 'insert':
+        this.notification = {class: 'text-success', message: 'saved !'};
         break;
 
-        case  'update':
-          this.notification={class:'text-primary', message: 'updated !'};
-          break;
+      case 'update':
+        this.notification = {class: 'text-primary', message: 'updated !'};
+        break;
 
-          case  'delete':
-            this.notification={class:'text-danger', message: 'deleted !'};
-            break;
+      case 'delete':
+        this.notification = {class: 'text-danger', message: 'deleted !'};
+        break;
 
 
-      default : 
-      break;
+      default:
+        break;
     }
 
     setTimeout(() => {
-      this.notification=null
+      this.notification = null;
     }, 3000);
 
   }

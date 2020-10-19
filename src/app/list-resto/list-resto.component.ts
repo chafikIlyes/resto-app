@@ -20,11 +20,11 @@ export class ListRestoComponent implements OnInit {
     })
   }
 
-  deleteResto(item) {
+  deleteResto(id) {
 
-    this.collection.splice(item-1,1)
-    this.resto.deleteResto(item).subscribe((result)=>{
-      console.warn(result)
+  
+    this.resto.deleteResto(id).subscribe(()=>{
+      this.collection=this.collection.filter(item=>item.id != id)
     })
   }
 
